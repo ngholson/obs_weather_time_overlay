@@ -63,18 +63,18 @@ function weatherCheck() {
 });
 }
 function currentTime(date){                                                             
-  var hours = date.getHours();                                                   
-  var minutes = date.getMinutes();                                               
-  var isAmPm = hours >= 12 ? 'PM' : 'AM';
-  hours = hours % 12;
-  hours = hours ? hours : 12;                                                    
-  minutes = minutes < 10 ? '0'+ minutes : minutes;
-  var curTime = hours + ':' + minutes + ' ' + isAmPm;
-  return curTime;
+	var hours = date.getHours();                                                   
+	var minutes = date.getMinutes();                                               
+	var isAmPm = hours >= 12 ? 'PM' : 'AM';
+	hours = hours % 12;
+	hours = hours ? hours : 12;                                                    
+	minutes = minutes < 10 ? '0'+ minutes : minutes;
+	var curTime = hours + ':' + minutes + ' ' + isAmPm;
+	return curTime;
 }
 function refreshData() {
-		weatherCheck();
-		setTimeout(refreshData, 60000);
+	weatherCheck();
+	setTimeout(refreshData, 60000);
 }
 </script>
 </body>
