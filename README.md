@@ -18,8 +18,8 @@ https://home.openweathermap.org/users/sign_up
 //********************************************************************************************************************************
 // CHANGE THESE SETTINGS 
 
-var yourApiKey = "__your__openweathermap_api_key__";	  // your OpenWeatherMap Api key here
-var yourCity = "";			                  // city name, ex: "London, UK" or "Las Vegas, NV, US"
+var yourApiKey = "CHANGE_ME";				  // your OpenWeatherMap Api key here
+var yourCity = "CHANGE_ME";			          // city name, ex: "London, UK" or "Las Vegas, NV, US"
 var yourUnits = "imperial";                               // 'imperial' for fahrenheit  'metric' for celsius  'standard' for kelvin.
 
 </script>
