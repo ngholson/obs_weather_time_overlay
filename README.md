@@ -11,7 +11,6 @@ https://home.openweathermap.org/users/sign_up
  open the weatherWidget.html file with any text editor:<br>
  change the following:<br><br>
  [yourApiKey] value to your API key.<br>
- [yourZipCode] if you want to use a Zip Code for location change this<br>
  [yourCity]if you want to use the city name option, change this. just be sure you follow the examples<br>
  [yourUnits] fahrenheit, celsius, kelvin see notes below. (imperial, metric, standard)
 
@@ -20,8 +19,7 @@ https://home.openweathermap.org/users/sign_up
 // CHANGE THESE SETTINGS 
 
 var yourApiKey = "__your__openweathermap_api_key__";	  // your OpenWeatherMap Api key here
-var yourZipCode = "39540";				  // if in the US use zip code (LEAVE BLANK IF USING CITY NAME)
-var yourCity = "";			                  // or you can use city name, ex: "London, UK" or "Las Vegas, NV, US" (LEAVE BLANK IF USING ZIP CODE)
+var yourCity = "";			                  // city name, ex: "London, UK" or "Las Vegas, NV, US"
 var yourUnits = "imperial";                               // 'imperial' for fahrenheit  'metric' for celsius  'standard' for kelvin.
 
 </script>
