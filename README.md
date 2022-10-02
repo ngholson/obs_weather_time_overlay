@@ -15,38 +15,32 @@ https://home.openweathermap.org/users/sign_up
  ```yourUnits``` fahrenheit, celsius, kelvin see notes below. (imperial, metric, standard)
 
 ```
-//********************************************************************************************************************************
+//************************************************************************************************************************
 // CHANGE THESE SETTINGS 
 
-var yourApiKey = "CHANGE_ME";	  // your OpenWeatherMap Api key here
-var yourCity = "CHANGE_ME";	  // city name, ex: "London, UK" or "Las Vegas, NV, US"
-var yourUnits = "imperial";       // 'imperial' for fahrenheit  'metric' for celsius  'standard' for kelvin.
+var yourApiKey = "CHANGE_ME";		// your OpenWeatherMap Api key here
+var yourCity = "CHANGE_ME";		// your city name, ex: "London, UK" or "Las Vegas, NV, US" 
+var yourUnits = "imperial";		// 'imperial' for fahrenheit  'metric' for celsius  'standard' for kelvin.
 
-</script>
-
-<!-- Weather Display CSS change as needed -->
-<style> 
+//************************************************************************************************************************
+</script><style> 
+/* ---------------------------------------------  CSS OPTIONS START HERE  ----------------------------------------------*/
 body {
-	background: rgba(0,0,0,0);	/* removes body background */
-}
+	background: rgba(0,0,0,0);	/* removes body background		(transparent background do not change)	*/
+	}
+.weather-box {				/* weather display CSS			(start of weather box css)		*/
+	border: 1px solid #000;		/* BORDER SIZE AND COLOR		(size style color)			*/
+	border-radius:5px;		/* ROUNDED CORNERS			(corder radius in pixels)		*/
+	background: lightgrey;		/* WEATHER DISPLAY BACKGROUND COLOR	(can be web friendly name, hex, rgba)	*/
+	text-align:center;		/* TEXT ALIGNMENT			(center, right, left, justify)		*/
+	font-family:tahoma;		/* FONT					(what web friendly font to use)		*/
+	font-size:10pt;			/* FONT SIZE				(how big is the font)			*/
+	font-weight:bold;		/* FONT WEIGHT				(bold, bolder, normal)			*/
+	color: black;			/* FONT COLOR				(can be web friendly name, hex, rgba)	*/
+	widtH: 400px;			/* WEATHER DISPLAY WIDTH		(width of weather box)			*/
+	}
 
-.weather-box {                    /* weather display CSS */
-	border: 1px solid #000;   /* BORDER SIZE AND COLOR */
-	border-radius:5px;        /* ROUNDED CORNERS */
-	background: lightgrey;    /* WEATHER DISPLAY BACKGROUND COLOR */
-	text-align:center;        /* TEXT ALIGNMENT */
-	font-family:tahoma;       /* FONT */
-	font-size:10pt;           /* FONT SIZE */
-	font-weight:bold;         /* FONT WEIGHT */
-	color: black;             /* FONT COLOR */
-	width: 500px;		  /* WEATHER DISPLAY WIDTH */
-}
-
-</style>	
-<!--
-//********************************************************************************************************************************
-// NO CHANGES BELOW HERE
-//********************************************************************************************************************************
+/* ---------------------------------------------  NO CHANGES BELOW HERE  -----------------------------------------------*/
 ```
 
 Save the file and head over to OBS-Studio
