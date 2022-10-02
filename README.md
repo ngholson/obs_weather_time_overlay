@@ -8,11 +8,11 @@ https://home.openweathermap.org/users/sign_up
  Once you have your openweathermap account and free API key you will need to make the following changes in the weatherWidget.html file.<br>
  <B>NOTE: IT WILL TAKE 5-10 MINUTES FOR YOUR NEW API KEY TO WORK. PLEASE BE PATIENT.</b>
  
- open the weatherWidget.html file with any text editor:<br>
+ open the ```weatherWidget.html``` file with any text editor:<br>
  change the following:<br><br>
- [yourApiKey] Your API key.<br>
- [yourCity] Youe city name. just be sure you follow the examples<br>
- [yourUnits] fahrenheit, celsius, kelvin see notes below. (imperial, metric, standard)
+ ```yourApiKey``` Your API key.<br>
+ ```yourCity``` Youe city name. just be sure you follow the examples<br>
+ ```yourUnits``` fahrenheit, celsius, kelvin see notes below. (imperial, metric, standard)
 
 ```
 //********************************************************************************************************************************
@@ -52,7 +52,7 @@ body {
 Save the file and head over to OBS-Studio
 
 in OBS add a new "browser" source to the scene you want to dispaly the weather and time. 
-change the URL for the source the path to the weatherWidget.html file you just saved.
+change the URL for the source the path to the ```weatherWidget.html``` file you just saved.
 change the height and width to 1920x1080.
 
 save and position as needed.
