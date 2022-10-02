@@ -39,6 +39,7 @@ body {
 	font-size:10pt;           /* FONT SIZE */
 	font-weight:bold;         /* FONT WEIGHT */
 	color: black;             /* FONT COLOR */
+	width: 500px;		  /* WEATHER DISPLAY WIDTH */
 }
 
 </style>	
