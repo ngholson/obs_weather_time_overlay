@@ -15,6 +15,8 @@ https://home.openweathermap.org/users/sign_up
  ```yourUnits``` fahrenheit, celsius, kelvin see notes below. (imperial, metric, standard)
 
 ```
+weatherWidget.html
+
 //************************************************************************************************************************
 // CHANGE THESE SETTINGS 
 
