@@ -11,7 +11,7 @@ https://home.openweathermap.org/users/sign_up
  open the ```weatherWidget.html``` file with any text editor:<br>
  change the following:<br><br>
  ```yourApiKey``` Your API key.<br>
- ```yourCity``` Your city name. just be sure you follow the examples<br>
+ ```yourCity``` Your city name. <i>(example:"London, UK" or "Las Vegas, NV, US" or "Moscow")</i><br>
  ```yourUnits``` fahrenheit, celsius, kelvin see notes below. (imperial, metric, standard)
 
 ```
