@@ -11,7 +11,7 @@ https://home.openweathermap.org/users/sign_up
  open the weatherWidget.html file with any text editor:<br>
  change the following:<br><br>
  [yourApiKey] value to your API key.<br>
- [yourCity]if you want to use the city name option, change this. just be sure you follow the examples<br>
+ [yourCity] city name. just be sure you follow the examples<br>
  [yourUnits] fahrenheit, celsius, kelvin see notes below. (imperial, metric, standard)
 
 ```
