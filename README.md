@@ -18,9 +18,9 @@ https://home.openweathermap.org/users/sign_up
 //********************************************************************************************************************************
 // CHANGE THESE SETTINGS 
 
-var yourApiKey = "CHANGE_ME";				  // your OpenWeatherMap Api key here
-var yourCity = "CHANGE_ME";			          // city name, ex: "London, UK" or "Las Vegas, NV, US"
-var yourUnits = "imperial";                               // 'imperial' for fahrenheit  'metric' for celsius  'standard' for kelvin.
+var yourApiKey = "CHANGE_ME";	  // your OpenWeatherMap Api key here
+var yourCity = "CHANGE_ME";	  // city name, ex: "London, UK" or "Las Vegas, NV, US"
+var yourUnits = "imperial";       // 'imperial' for fahrenheit  'metric' for celsius  'standard' for kelvin.
 
 </script>
 
