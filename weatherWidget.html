@@ -30,6 +30,8 @@ body {
 	font-size:10pt;						/* FONT SIZE */
 	font-weight:bold;					/* FONT WEIGHT */
 	color: black;						/* FONT COLOR */
+	widtH: 500px;						/* WEATHER DISPLAY WIDTH */
+
 }
 </style>	
 <!--
@@ -53,7 +55,6 @@ function weatherCheck() {
 	dataType: 'json',
 	success: function(geoResponse) {
 	document.getElementById("id-weather").innerHTML = `${geoResponse[0].name}, ${geoResponse[0].state}: ${curtemp}&deg;F and ${apiResponse.weather[0].main } - ${time}`;
-	document.getElementById("id-weather").style.width = document.getElementById("id-weather").innerHTML.length+"em";
 	}});
 }});
 }
