@@ -2,39 +2,49 @@
 <!--
 weatherWidget with time overlay for OBS
 Author: Norman Gholson IV 2022
-
 requires free OpenWeatherMap account with private API Key
 https://openweathermap.org/
 -->
 <html><head><script>
-//************************************************************************************************************************
+// --------------------------------------------------------------------------------------------------------------------- */
 // CHANGE THESE SETTINGS 
 
-var yourApiKey = "CHANGE_ME";		// your OpenWeatherMap Api key here
-var yourCity = "CHANGE_ME";		// your city name, ex: "London, UK" or "Las Vegas, NV, US" 
-var yourUnits = "imperial";		// 'imperial' for fahrenheit  'metric' for celsius  'standard' for kelvin.
+var yourApiKey = "CHANGE_ME";				// your OpenWeatherMap Api key here
+var yourCity = "CHANGE_ME";					// your city name, ex: "London, UK" or "Las Vegas, NV, US" 
+var yourUnits = "imperial";					// 'imperial' for fahrenheit  'metric' for celsius  'standard' for kelvin.
+var weatherDisplay = "full";				// options: "full" , "simple" , "temp" , "time"
+var weatherIcons = 1;						// show Weather status icons in display 1=on  0=off
+var iconHeight = "12px";					// weather icon height in px
+var textSize = "10pt";						// font size
+var textColor = "black";					// font color
+var displayWidth = "400px";					// weather display box width
 
-//************************************************************************************************************************
 </script><style> 
-/* ---------------------------------------------  CSS OPTIONS START HERE  ----------------------------------------------*/
+:root{
+--txtSize: 10pt;
+--txtColor:black;
+--dispWidth:400px;
+}
 body {
-	background: rgba(0,0,0,0);	/* removes body background		(transparent background do not change)	*/
+	background: rgba(0,0,0,0);
 	}
-.weather-box {				/* weather display CSS			(start of weather box css)		*/
-	border: 1px solid #000;		/* BORDER SIZE AND COLOR		(size style color)			*/
-	border-radius:5px;		/* ROUNDED CORNERS			(corder radius in pixels)		*/
-	background: lightgrey;		/* WEATHER DISPLAY BACKGROUND COLOR	(can be web friendly name, hex, rgba)	*/
-	text-align:center;		/* TEXT ALIGNMENT			(center, right, left, justify)		*/
-	font-family:tahoma;		/* FONT					(what web friendly font to use)		*/
-	font-size:10pt;			/* FONT SIZE				(how big is the font)			*/
-	font-weight:bold;		/* FONT WEIGHT				(bold, bolder, normal)			*/
-	color: black;			/* FONT COLOR				(can be web friendly name, hex, rgba)	*/
-	widtH: 400px;			/* WEATHER DISPLAY WIDTH		(width of weather box)			*/
+.weather-box {
+	border: 1px solid #000;
+	border-radius:5px;
+	background: lightgrey;
+	text-align:center;
+	font-family:tahoma;
+	font-size: var(--txtSize);
+	font-weight:bold;
+	color:var(--txtColor);
+	width:var(--dispWidth);
 	}
-
-/* ---------------------------------------------  NO CHANGES BELOW HERE  -----------------------------------------------*/
-</style></head><body>
+/* ---------------------------------------------  NO CHANGES BELOW HERE  ----------------------------------------------- */
+</style></head><body><center><pre class="weather-box" id="id-weather"></pre><img id="id-wicon" src="" width="50px" /></center>
 <script src="jquery.js"></script><script>
+document.querySelector(':root').style.setProperty('--txtSize', textSize);
+document.querySelector(':root').style.setProperty('--txtColor', textColor);
+document.querySelector(':root').style.setProperty('--dispWidth', displayWidth);
 refreshData();
 function weatherCheck() {
 	var time = currentTime(new Date());
@@ -44,12 +54,23 @@ function weatherCheck() {
 	dataType: 'json',
 	success: function(apiResponse) {
 	var curtemp = Math.round(apiResponse.main.temp);
+	var wimg="./images/"+apiResponse.weather[0].icon +".png";
 	$.ajax({
 	url:'http://api.openweathermap.org/geo/1.0/direct',
 	data:{ q: `${apiResponse.name}`, appid: `${yourApiKey}` },
 	dataType: 'json',
 	success: function(geoResponse) {
-	document.getElementById("id-weather").innerHTML = `${geoResponse[0].name}, ${geoResponse[0].state}: ${curtemp}&deg;F and ${apiResponse.weather[0].main } - ${time}`;
+	if (weatherDisplay == "temp") {
+	if (weatherIcons == 1){document.getElementById("id-weather").innerHTML = `<img style='height: ${iconHeight};' src=${wimg}> ${curtemp}&deg;`;return; }
+	document.getElementById("id-weather").innerHTML = `${curtemp}&deg;`;return;} 
+	if (weatherDisplay == "time") {document.getElementById("id-weather").innerHTML = `${time}`;return;} 
+	if (weatherDisplay == "simple"){
+	if (weatherIcons == 1){	document.getElementById("id-weather").innerHTML = `${curtemp}&deg; <img style='height: ${iconHeight};' src=${wimg}> ${time}`; return; }
+	document.getElementById("id-weather").innerHTML = `${curtemp}&deg;  ${time}`; return;
+	} 
+	if (weatherIcons == 1){
+	document.getElementById("id-weather").innerHTML = `${geoResponse[0].name}, ${geoResponse[0].state}: <img style='height: ${iconHeight};' src=${wimg}> ${curtemp}&deg;F and ${apiResponse.weather[0].main } - ${time}`;
+	} else { document.getElementById("id-weather").innerHTML = `${geoResponse[0].name}, ${geoResponse[0].state}: ${curtemp}&deg;F and ${apiResponse.weather[0].main } - ${time}`; }
 	}});
 }});
 }
@@ -67,4 +88,4 @@ function refreshData() {
 	weatherCheck();
 	setTimeout(refreshData, 60000);
 }
-</script><center><pre class="weather-box" id="id-weather"></pre></center></body></html>
+</script></body></html>
