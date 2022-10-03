@@ -5,7 +5,7 @@
 **This requires a free account with OpenWeatherMap.org**
 https://home.openweathermap.org/users/sign_up 
  
- Once you have your openweathermap account and free API key you will need to make the following changes in the weatherWidget.html file.<br>
+ Once you have your openweathermap account and free API key you will need to make the following changes in the ```weatherWidget.html``` file.<br>
  <B>NOTE: IT WILL TAKE 5-10 MINUTES FOR YOUR NEW API KEY TO WORK. PLEASE BE PATIENT.</b>
  
  open the ```weatherWidget.html``` file with any text editor:<br>
