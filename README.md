@@ -12,37 +12,27 @@ https://home.openweathermap.org/users/sign_up
  change the following:<br><br>
  ```yourApiKey``` Your API key.<br>
  ```yourCity``` Your city name. <i>(example:"London, UK" or "Las Vegas, NV, US" or "Moscow")</i><br>
- ```yourUnits``` fahrenheit, celsius, kelvin see notes below. (imperial, metric, standard)
+ ```yourUnits``` fahrenheit, celsius, kelvin see notes below. (```imperial```, ```metric```, ```standard```)<br>
+ ```weatherDisplay``` options are ```full```, ```simple```, ```temp```, ```time``` (```temp``` and ```time``` only display temp or time)<br>
+ ```weatherIcons``` turns on weather display icons 1=on 0=off<br>
+ ```iconHeight``` weather Icon height<br>
+ ```textSize``` text size<br>
+ ```textColor``` text color<br>
+ ```displayWidth``` weather display width<br>
 
 ```
 weatherWidget.html
 
-//************************************************************************************************************************
-// CHANGE THESE SETTINGS 
-
 var yourApiKey = "CHANGE_ME";		// your OpenWeatherMap Api key here
 var yourCity = "CHANGE_ME";		// your city name, ex: "London, UK" or "Las Vegas, NV, US" 
 var yourUnits = "imperial";		// 'imperial' for fahrenheit  'metric' for celsius  'standard' for kelvin.
+var weatherDisplay = "full";		// options: "full" , "simple" , "temp" , "time"
+var weatherIcons = 1;			// show Weather status icons in display 1=on  0=off
+var iconHeight = "12px";		// weather icon height in px
+var textSize = "10pt";			// font size
+var textColor = "black";		// font color
+var displayWidth = "400px";		// weather display box width
 
-//************************************************************************************************************************
-</script><style> 
-/* ---------------------------------------------  CSS OPTIONS START HERE  ----------------------------------------------*/
-body {
-	background: rgba(0,0,0,0);	/* removes body background		(transparent background do not change)	*/
-	}
-.weather-box {				/* weather display CSS			(start of weather box css)		*/
-	border: 1px solid #000;		/* BORDER SIZE AND COLOR		(size style color)			*/
-	border-radius:5px;		/* ROUNDED CORNERS			(corder radius in pixels)		*/
-	background: lightgrey;		/* WEATHER DISPLAY BACKGROUND COLOR	(can be web friendly name, hex, rgba)	*/
-	text-align:center;		/* TEXT ALIGNMENT			(center, right, left, justify)		*/
-	font-family:tahoma;		/* FONT					(what web friendly font to use)		*/
-	font-size:10pt;			/* FONT SIZE				(how big is the font)			*/
-	font-weight:bold;		/* FONT WEIGHT				(bold, bolder, normal)			*/
-	color: black;			/* FONT COLOR				(can be web friendly name, hex, rgba)	*/
-	widtH: 400px;			/* WEATHER DISPLAY WIDTH		(width of weather box)			*/
-	}
-
-/* ---------------------------------------------  NO CHANGES BELOW HERE  -----------------------------------------------*/
 ```
 
 Save the file and head over to OBS-Studio
