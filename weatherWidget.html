@@ -6,24 +6,22 @@ requires free OpenWeatherMap account with private API Key
 https://openweathermap.org/
 -->
 <html><head><script>
-// --------------------------------------------------------------------------------------------------------------------- */
-// CHANGE THESE SETTINGS 
+// ------------------------------------------------CHANGE THESE SETTINGS ----------------------------------------------- */
 
 var yourApiKey = "CHANGE_ME";				// your OpenWeatherMap Api key here
 var yourCity = "CHANGE_ME";					// your city name, ex: "London, UK" or "Las Vegas, NV, US" 
 var yourUnits = "imperial";					// 'imperial' for fahrenheit  'metric' for celsius  'standard' for kelvin.
 var weatherDisplay = "full";				// options: "full" , "simple" , "temp" , "time"
 var weatherIcons = 1;						// show Weather status icons in display 1=on  0=off
-var iconHeight = "12px";					// weather icon height in px
+var iconHeight = "12px";					// weather icon height
 var textSize = "10pt";						// font size
 var textColor = "black";					// font color
 var displayWidth = "400px";					// weather display box width
+var weatherBackground = "lightgrey";		// weather Background color
 
 </script><style> 
 :root{
---txtSize: 10pt;
---txtColor:black;
---dispWidth:400px;
+--txtSize:;--txtColor:;--dispWidth:;--wBack:;
 }
 body {
 	background: rgba(0,0,0,0);
@@ -31,20 +29,19 @@ body {
 .weather-box {
 	border: 1px solid #000;
 	border-radius:5px;
-	background: lightgrey;
 	text-align:center;
 	font-family:tahoma;
-	font-size: var(--txtSize);
 	font-weight:bold;
+/* ---------------------------------------------  NO CHANGES BELOW HERE  ----------------------------------------------- */
 	color:var(--txtColor);
 	width:var(--dispWidth);
+	background:var(--wBack);
+	font-size:var(--txtSize);
 	}
-/* ---------------------------------------------  NO CHANGES BELOW HERE  ----------------------------------------------- */
-</style></head><body><center><pre class="weather-box" id="id-weather"></pre></center>
-<script src="jquery.js"></script><script>
-document.querySelector(':root').style.setProperty('--txtSize', textSize);
-document.querySelector(':root').style.setProperty('--txtColor', textColor);
-document.querySelector(':root').style.setProperty('--dispWidth', displayWidth);
+</style></head><body>
+<script src="jquery.js"></script><center><pre class="weather-box" id="id-weather"></pre></center><script>
+document.querySelector(':root').style.setProperty('--txtSize', textSize);document.querySelector(':root').style.setProperty('--txtColor', textColor);
+document.querySelector(':root').style.setProperty('--dispWidth', displayWidth);document.querySelector(':root').style.setProperty('--wBack', weatherBackground);
 refreshData();
 function weatherCheck() {
 	var time = currentTime(new Date());
@@ -69,8 +66,8 @@ function weatherCheck() {
 	document.getElementById("id-weather").innerHTML = `${curtemp}&deg;  ${time}`; return;
 	} 
 	if (weatherIcons == 1){
-	document.getElementById("id-weather").innerHTML = `${geoResponse[0].name}, ${geoResponse[0].state}: <img style='height: ${iconHeight};' src=${wimg}> ${curtemp}&deg;F and ${apiResponse.weather[0].main } - ${time}`;
-	} else { document.getElementById("id-weather").innerHTML = `${geoResponse[0].name}, ${geoResponse[0].state}: ${curtemp}&deg;F and ${apiResponse.weather[0].main } - ${time}`; }
+	document.getElementById("id-weather").innerHTML = `${geoResponse[0].name}, ${geoResponse[0].state}: <img style='height: ${iconHeight};' src=${wimg}> ${curtemp}&deg; and ${apiResponse.weather[0].main } - ${time}`;
+	} else { document.getElementById("id-weather").innerHTML = `${geoResponse[0].name}, ${geoResponse[0].state}: ${curtemp}&deg; and ${apiResponse.weather[0].main } - ${time}`; }
 	}});
 }});
 }
