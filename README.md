@@ -5,7 +5,7 @@
 **This requires a <a href="https://home.openweathermap.org/users/sign_up">free API key</a> from OpenWeatherMap.org**
 
 
-<B>NOTE: IT WILL TAKE 5-10 MINUTES FOR YOUR NEW API KEY TO WORK. PLEASE BE PATIENT.</b>
+<B>NOTE: IT WILL TAKE 5-10 MINUTES FOR YOUR NEW API KEY TO BECOME ACTIVE. PLEASE BE PATIENT.</b>
 
 open the ```weatherWidget.html``` file with any text editor:<br>
  change the following:<br><br>
