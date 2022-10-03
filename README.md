@@ -2,8 +2,8 @@
 
 ### <a href="https://github.com/ngholson/obs_weather_time_overlay/archive/refs/heads/main.zip">Download here</a>
 
-**This requires a free account with OpenWeatherMap.org**
-https://home.openweathermap.org/users/sign_up 
+**This requires a <a href="https://home.openweathermap.org/users/sign_up">free API key</a> from OpenWeatherMap.org**
+
 
 <B>NOTE: IT WILL TAKE 5-10 MINUTES FOR YOUR NEW API KEY TO WORK. PLEASE BE PATIENT.</b>
 
