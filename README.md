@@ -1,6 +1,6 @@
 # Live weather and time overlay for OBS
 
-<a href="https://github.com/ngholson/obs_weather_time_overlay/archive/refs/heads/main.zip">Download here</a>
+### <a href="https://github.com/ngholson/obs_weather_time_overlay/archive/refs/heads/main.zip">Download here</a>
 
 **This requires a free account with OpenWeatherMap.org**
 https://home.openweathermap.org/users/sign_up 
