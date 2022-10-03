@@ -34,9 +34,9 @@ var displayWidth = "400px";		// weather display box width
 
 ```
 
-Save the file and head over to OBS-Studio
+Save the file and open OBS-Studio
 
-in OBS add a new "browser" source to the scene you want to dispaly the weather and time. 
+in OBS, add a new "browser" source to the scene you want to dispaly the weather and time. 
 change the URL for the source the path to the ```weatherWidget.html``` file you just saved.
 change the height and width to 1920x1080.
 
