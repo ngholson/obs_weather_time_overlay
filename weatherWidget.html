@@ -1,6 +1,6 @@
 <!doctype html>
-<!--
-weatherWidget with time overlay for OBS
+<!-- 
+weatherWidget with time overlay for OBS v0.1.2 
 Author: Norman Gholson IV 2022
 requires free OpenWeatherMap account with private API Key
 https://openweathermap.org/
@@ -20,9 +20,7 @@ var displayWidth = "400px";					// weather display box width
 var weatherBackground = "lightgrey";		// weather Background color
 
 </script><style> 
-:root{
---txtSize:;--txtColor:;--dispWidth:;--wBack:;
-}
+
 body {
 	background: rgba(0,0,0,0);
 	}
@@ -38,6 +36,9 @@ body {
 	background:var(--wBack);
 	font-size:var(--txtSize);
 	}
+:root{
+--txtSize:;--txtColor:;--dispWidth:;--wBack:;
+}
 </style></head><body>
 <script src="jquery.js"></script><center><pre class="weather-box" id="id-weather"></pre></center><script>
 document.querySelector(':root').style.setProperty('--txtSize', textSize);document.querySelector(':root').style.setProperty('--txtColor', textColor);
