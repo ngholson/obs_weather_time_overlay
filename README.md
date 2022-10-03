@@ -13,8 +13,8 @@ https://home.openweathermap.org/users/sign_up
  ```yourApiKey``` Your API key.<br>
  ```yourCity``` Your city name. <i>(example:"London, UK" or "Las Vegas, NV, US" or "Moscow")</i><br>
  ```yourUnits``` fahrenheit, celsius, kelvin see notes below. (```imperial```, ```metric```, ```standard```)<br>
- ```weatherDisplay``` options are ```full```, ```simple```, ```temp```, ```time``` (```temp``` and ```time``` only display temp or time)<br>
- ```weatherIcons``` turns on weather display icons 1=on 0=off<br>
+ ```weatherDisplay``` options: ```full```, ```simple```, ```temp```, ```time``` (```temp``` and ```time``` only display temp or time)<br>
+ ```weatherIcons``` turns on weather display icons: 1=on 0=off<br>
  ```iconHeight``` weather Icon height<br>
  ```textSize``` text size<br>
  ```textColor``` text color<br>
