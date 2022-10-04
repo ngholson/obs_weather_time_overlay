@@ -21,9 +21,7 @@ var weatherBackground = "lightgrey";		// weather Background color  (if dynamicBa
 var dynamicBackground = 1;					// weather background changes based on day or night 1=on 0=off
 
 </script><style> 
-:root{
---txtSize:;--txtColor:;--dispWidth:;--wBack:;
-}
+
 body {
 	background: rgba(0,0,0,0);
 	}
@@ -39,6 +37,9 @@ body {
 	background:var(--wBack);
 	font-size:var(--txtSize);
 	}
+:root{
+--txtSize:;--txtColor:;--dispWidth:;--wBack:;
+}
 </style></head><body>
 <script src="jquery.js"></script><center><pre class="weather-box" id="id-weather"></pre></center><script>
 var language = window.navigator.userLanguage || window.navigator.language;
