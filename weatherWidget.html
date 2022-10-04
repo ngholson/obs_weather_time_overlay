@@ -20,6 +20,9 @@ var displayWidth = "750px";					// weather display box width
 var weatherBackground = "lightgrey";		// weather Background color  (if dynamicBackground is enabled it only applies during daytime hours)
 var dynamicBackground = 1;					// weather background changes based on day or night 1=on 0=off
 
+yourApiKey = "81e9eb0b7624ca8f0efb4fd8ddd4970c";
+yourCity = "diberville";
+
 </script><style> 
 :root{
 --txtSize:;--txtColor:;--dispWidth:;--wBack:;
@@ -76,8 +79,8 @@ function weatherCheck() {
 	document.getElementById("id-weather").innerHTML = `${curtemp}&deg;  ${time}`; return;
 	} 
 	if (weatherIcons == 1){
-	document.getElementById("id-weather").innerHTML = `${geoResponse[0].name}, ${geoResponse[0].state}: <img style='height: ${iconHeight};' src=${wimg}> ${curtemp}&deg; and ${apiResponse.weather[0].main } - ${time}`;
-	} else { document.getElementById("id-weather").innerHTML = `${geoResponse[0].name}, ${geoResponse[0].state}: ${curtemp}&deg; and ${apiResponse.weather[0].main } - ${time}`; }
+	document.getElementById("id-weather").innerHTML = `${geoResponse[0].name}, ${geoResponse[0].state}: ${curtemp}&deg; <img style='height: ${iconHeight};' src=${wimg}> ${apiResponse.weather[0].description } - ${time}`;
+	} else { document.getElementById("id-weather").innerHTML = `${geoResponse[0].name}, ${geoResponse[0].state}: ${curtemp}&deg; \/ ${apiResponse.weather[0].description } - ${time}`; }
 	}});
 }});
 }
