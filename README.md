@@ -21,7 +21,7 @@ open the ```weatherWidget.html``` file with any text editor:<br>
  ```textSize``` text size<br>
  ```textColor``` text color<br>
  ```displayWidth``` weather display width<br>
- ```weatherBackground``` weather box color (if dynamicBackground is enabled, this will only apply during the day hours)<br>
+ ```weatherBackground``` weather box color (if ```dynamicBackground``` is enabled, this will only apply during the day hours)<br>
  ```dynamicBackground``` weather box will change based on day/night. ```1```=on ```0```=off<br>
  
 ```
