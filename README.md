@@ -29,10 +29,12 @@ var yourCity = "CHANGE_ME";		// your city name, ex: "London, UK" or "Las Vegas, 
 var yourUnits = "imperial";		// 'imperial' for fahrenheit  'metric' for celsius  'standard' for kelvin.
 var weatherDisplay = "full";		// options: "full" , "simple" , "temp" , "time"
 var weatherIcons = 1;			// show Weather status icons in display 1=on  0=off
-var iconHeight = "12px";		// weather icon height in px
-var textSize = "10pt";			// font size
+var iconHeight = "22px";		// weather icon height in px
+var textSize = "20pt";			// font size
 var textColor = "black";		// font color
-var displayWidth = "400px";		// weather display box width
+var displayWidth = "850px";		// weather display box width
+var weatherBackground = "lightgrey";    // weather Background color  (if dynamicBackground is enabled this only applies during daytime hours)
+var dynamicBackground = 1;              // weather background changes based on day or night 1=on 0=off
 
 ```
 
