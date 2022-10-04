@@ -9,9 +9,12 @@
 
 open the ```weatherWidget.html``` file with any text editor:<br>
  change the following:<br><br>
+ <b><i>Required:</b></i><br>
  ```yourApiKey``` Your OpenWeatherMap API key.<br>
  ```yourCity``` Your city name. <i>(example:"London, UK" or "Las Vegas, NV, US" or "Moscow")</i><br>
  ```yourUnits``` fahrenheit, celsius, kelvin see notes below. (```imperial```, ```metric```, ```standard```)<br>
+ 
+ <b><i>Optional:</b></i><br>
  ```weatherDisplay``` options: ```full```, ```weather```, ```simple```, ```temp```, ```time``` (```temp``` and ```time``` only display temp or time)<br>
  ```weatherIcons``` turns on weather display icons: 1=on 0=off<br>
  ```iconHeight``` weather Icon height<br>
