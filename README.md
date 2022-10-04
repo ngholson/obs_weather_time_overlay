@@ -11,18 +11,18 @@ open the ```weatherWidget.html``` file with any text editor:<br>
  change the following:<br><br>
  <b><i>Required:</b></i><br>
  ```yourApiKey``` Your OpenWeatherMap API key.<br>
- ```yourCity``` Your city name. <i>(example:"London, UK" or "Las Vegas, NV, US" or "Moscow")</i><br>
+ ```yourCity``` Your city name. <i>(example:</i>```London, UK``` <i>or</i> ```Las Vegas, NV, US``` <i>or</i> ```Moscow```<i>)</i><br>
  ```yourUnits``` fahrenheit, celsius, kelvin see notes below. (```imperial```, ```metric```, ```standard```)<br>
  
  <b><i>Optional:</b></i><br>
  ```weatherDisplay``` options: ```full```, ```weather```, ```simple```, ```temp```, ```time``` (```temp``` and ```time``` only display temp or time)<br>
- ```weatherIcons``` turns on weather display icons: 1=on 0=off<br>
+ ```weatherIcons``` turns on weather display icons: ```1```=on ```0```=off<br>
  ```iconHeight``` weather Icon height<br>
  ```textSize``` text size<br>
  ```textColor``` text color<br>
  ```displayWidth``` weather display width<br>
  ```weatherBackground``` weather background color (if dynamicBackground is enabled, this will only apply during the day hours)<br>
- ```dynamicBackground``` weather background will change based on day/night.<br>
+ ```dynamicBackground``` weather background will change based on day/night. ```1```=on ```0```=off<br>
  
 ```
 weatherWidget.html
