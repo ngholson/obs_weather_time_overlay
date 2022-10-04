@@ -13,10 +13,10 @@ var yourCity = "CHANGE_ME";					// your city name, ex: "London, UK" or "Las Vega
 var yourUnits = "imperial";					// 'imperial' for fahrenheit  'metric' for celsius  'standard' for kelvin.
 var weatherDisplay = "full";				// options: "full" , "simple" , "temp" , "time"
 var weatherIcons = 1;						// show Weather status icons in display 1=on  0=off
-var iconHeight = "12px";					// weather icon height (i find it is best at textSize+2)
-var textSize = "10pt";						// font size
+var iconHeight = "22px";					// weather icon height (i find it is best at textSize+2)
+var textSize = "20pt";						// font size
 var textColor = "black";					// font color
-var displayWidth = "400px";					// weather display box width
+var displayWidth = "750px";					// weather display box width
 var weatherBackground = "lightgrey";		// weather Background color  (if dynamicBackground is enabled it only applies during daytime hours)
 var dynamicBackground = 1;					// weather background changes based on day or night 1=on 0=off
 
@@ -41,6 +41,8 @@ body {
 	}
 </style></head><body>
 <script src="jquery.js"></script><center><pre class="weather-box" id="id-weather"></pre></center><script>
+var language = window.navigator.userLanguage || window.navigator.language;
+const regionTranslate = new Intl.DisplayNames([language], { type: 'region' });
 document.querySelector(':root').style.setProperty('--txtSize', textSize);document.querySelector(':root').style.setProperty('--txtColor', textColor);
 document.querySelector(':root').style.setProperty('--dispWidth', displayWidth);document.querySelector(':root').style.setProperty('--wBack', weatherBackground);
 refreshData();
@@ -48,7 +50,7 @@ function weatherCheck() {
 	var time = currentTime(new Date());
 	$.ajax({
 	url: 'https://api.openweathermap.org/data/2.5/weather',
-	data:{units: `${yourUnits}`, q: `${yourCity}`, appid: `${yourApiKey}` },
+	data:{units: `${yourUnits}`, q: `${yourCity}`, appid: `${yourApiKey}`},
 	dataType: 'json',
 	success: function(apiResponse) {
 	if (dynamicBackground == 1){
@@ -62,7 +64,9 @@ function weatherCheck() {
 	data:{ q: `${apiResponse.name}`, appid: `${yourApiKey}` },
 	dataType: 'json',
 	success: function(geoResponse) {
-	if (geoResponse[0].state == apiResponse.name) { geoResponse[0].state = geoResponse[0].country;}
+	if (geoResponse[0].state == apiResponse.name || geoResponse[0].state == null ) { 
+		geoResponse[0].state = regionTranslate.of(geoResponse[0].country);
+		}
 	if (weatherDisplay == "temp") {
 	if (weatherIcons == 1){document.getElementById("id-weather").innerHTML = `<img style='height: ${iconHeight};' src=${wimg}> ${curtemp}&deg;`;return; }
 	document.getElementById("id-weather").innerHTML = `${curtemp}&deg;`;return;} 
