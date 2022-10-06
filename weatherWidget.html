@@ -19,7 +19,7 @@ var textColor = "black";					// font color
 var displayWidth = "850px";					// weather display box width
 var weatherBackground = "lightgrey";		// weather Background color  (if dynamicBackground is enabled it only applies during daytime hours)
 var dynamicBackground = 1;					// weather background changes based on day or night 1=on 0=off
-var clockseperator = "";					// optional: seperator for the temp and time in full mode only (ex: -, /, ., *, additional spaces, etc.)
+var clockSeperator = "";					// optional: seperator for the temp and time in full mode only (ex: -, /, ., *, additional spaces, etc.)
 
 </script><style> 
 
@@ -84,8 +84,8 @@ function weatherCheck() {
 	return;}
 	//start of full
 	if (weatherIcons == 1){
-	document.getElementById("id-weather").innerHTML = `${geoResponse[0].name}, ${geoResponse[0].state}: ${curtemp}&deg; <img style='height: ${iconHeight};' src=${wimg}> ${apiResponse.weather[0].description } ${clockseperator} ${time}`;
-	} else { document.getElementById("id-weather").innerHTML = `${geoResponse[0].name}, ${geoResponse[0].state}: ${curtemp}&deg; \/ ${apiResponse.weather[0].description } ${clockseperator} ${time}`; }
+	document.getElementById("id-weather").innerHTML = `${geoResponse[0].name}, ${geoResponse[0].state}: ${curtemp}&deg; <img style='height: ${iconHeight};' src=${wimg}> ${apiResponse.weather[0].description } ${clockSeperator} ${time}`;
+	} else { document.getElementById("id-weather").innerHTML = `${geoResponse[0].name}, ${geoResponse[0].state}: ${curtemp}&deg; \/ ${apiResponse.weather[0].description } ${clockSeperator} ${time}`; }
 	}});
 }});
 }
