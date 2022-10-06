@@ -39,6 +39,7 @@ var textColor = "black";		// font color
 var displayWidth = "850px";		// weather display box width
 var weatherBackground = "lightgrey";    // weather Background color  (if dynamicBackground is enabled this only applies during daytime hours)
 var dynamicBackground = 1;              // weather background changes based on day or night 1=on 0=off
+var clockseperator = "";					// optional: seperator for the temp and time in full mode only (ex: -, /, ., *, additional spaces, etc.)
 
 ```
 
