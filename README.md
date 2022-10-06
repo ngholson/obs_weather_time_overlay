@@ -1,9 +1,11 @@
 # Live weather and time overlay for OBS
+screenshot:<br>
+<center>
+<img src="https://obsproject.com/forum/attachments/screen_shot-png.87338/"></center>
 
 ### <a href="https://github.com/ngholson/obs_weather_time_overlay/archive/refs/heads/main.zip">Download here</a>
 
 **This requires a <a href="https://home.openweathermap.org/users/sign_up">free API key</a> from OpenWeatherMap.org**
-
 
 <B>NOTE: IT WILL TAKE 5-10 MINUTES FOR YOUR NEW API KEY TO BECOME ACTIVE. PLEASE BE PATIENT.</b>
 
@@ -52,4 +54,6 @@ change the height and width to 1920x1080.
 save and position as needed.
 
 REMEMBER: IT WILL TAKE 5-10 MINUTES FOR YOUR API KEY TO BECOME ACTIVE. THIS WILL NOT WORK UNTIL IT DOES.
-
+<center>
+<img src="https://obsproject.com/forum/attachments/screen_shot-png.87338/">
+</center>
