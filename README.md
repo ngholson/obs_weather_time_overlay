@@ -3,7 +3,7 @@ screenshot:<br>
 <center>
 <img src="https://obsproject.com/forum/attachments/screen_shot-png.87338/"></center>
 
-### <a href="https://github.com/ngholson/obs_weather_time_overlay/archive/refs/heads/main.zip">Download here</a>
+### <a href="https://github.com/ngholson/obs_weather_time_overlay/archive/refs/heads/main.zip">Download here</a> 
 
 **This requires a <a href="https://home.openweathermap.org/users/sign_up">free API key</a> from OpenWeatherMap.org**
 
@@ -13,7 +13,7 @@ open the ```weatherWidget.html``` file with any text editor:<br>
  change the following:<br><br>
  <b><i>Required:</b></i><br>
  ```yourApiKey``` Your OpenWeatherMap API key.<br>
- ```yourCity``` Your city name. <i>(example:</i>```London, UK``` <i>or</i> ```Las Vegas, NV, US``` <i>or</i> ```Moscow```<i>)</i><br>
+ ```yourCity``` Your city name. <i>(example:</i>```London, UK``` <i>or</i> ```Las Vegas, NV, US``` <i>or</i> ```Kiev```<i>)</i><br>
  ```yourUnits``` fahrenheit, celsius, kelvin see notes below. (```imperial```, ```metric```, ```standard```)<br>
  
  <b><i>Optional:</b></i><br>
