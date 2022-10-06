@@ -46,7 +46,7 @@ function weatherCheck() {
 	var time = currentTime(new Date());
 	$.ajax({
 	url: 'https://api.openweathermap.org/data/2.5/weather',
-	data:{units: `${yourUnits}`, q: `${yourCity}`, appid: `${yourApiKey}`},
+	data:{units: `${yourUnits}`, q: `${yourCity}`, appid: `${yourApiKey}`, lang: `${language}`},
 	dataType: 'json',
 	success: function(apiResponse) {
 	if (dynamicBackground == 1){
