@@ -11,7 +11,7 @@ https://openweathermap.org/
 var yourApiKey = "CHANGE_ME";				// your OpenWeatherMap Api key here
 var yourCity = "CHANGE_ME";					// your city name, ex: "London, UK" or "Las Vegas, NV, US" 
 var yourUnits = "imperial";					// 'imperial' for fahrenheit  'metric' for celsius  'standard' for kelvin.
-var weatherDisplay = "full";				// options: "full" , "weather", "simple" , "temp" , "time" (if blank or errored, default is "full")
+var weatherDisplay = "TIME";				// options: "full" , "weather", "simple" , "temp" , "time" (if blank or error, default is "full")
 var weatherIcons = 1;						// show Weather status icons in display 1=on  0=off
 var iconHeight = "22px";					// weather icon height (i find it is best at textSize+2)
 var textSize = "20pt";						// font size
@@ -23,7 +23,7 @@ var dynamicBackground = 1;					// weather background changes based on day or nig
 </script><style> 
 
 body {
-	background: rgba(0,0,0,0);
+	background: rgba(0,0,0,.5);
 	}
 .weather-box {
 	border: 1px solid #000;
@@ -68,15 +68,15 @@ function weatherCheck() {
 	if (geoResponse[0].state == apiResponse.name || geoResponse[0].state == null ) { 
 		geoResponse[0].state = regionTranslate.of(geoResponse[0].country);
 		}
-	if (weatherDisplay == "temp") {
+	if (weatherDisplay.toLowerCase() == "temp") {
 	if (weatherIcons == 1){document.getElementById("id-weather").innerHTML = `<img style='height: ${iconHeight};' src=${wimg}> ${curtemp}&deg;`;return; }
 	document.getElementById("id-weather").innerHTML = `${curtemp}&deg;`;return;} 
-	if (weatherDisplay == "time") {document.getElementById("id-weather").innerHTML = `${time}`;return;} 
-	if (weatherDisplay == "simple"){
+	if (weatherDisplay.toLowerCase() == "time") {document.getElementById("id-weather").innerHTML = `${time}`;return;} 
+	if (weatherDisplay.toLowerCase() == "simple"){
 	if (weatherIcons == 1){	document.getElementById("id-weather").innerHTML = `${curtemp}&deg; <img style='height: ${iconHeight};' src=${wimg}> ${time}`; return; }
 	document.getElementById("id-weather").innerHTML = `${curtemp}&deg;  ${time}`; return;
 	} 
-	if (weatherDisplay == "weather"){
+	if (weatherDisplay.toLowerCase() == "weather"){
 		if (weatherIcons == 1){
 			document.getElementById("id-weather").innerHTML = `${geoResponse[0].name}, ${geoResponse[0].state}: ${curtemp}&deg; <img style='height: ${iconHeight};' src=${wimg}> ${apiResponse.weather[0].description }`;
 			} else { document.getElementById("id-weather").innerHTML = `${geoResponse[0].name}, ${geoResponse[0].state}: ${curtemp}&deg; \/ ${apiResponse.weather[0].description }`; }
