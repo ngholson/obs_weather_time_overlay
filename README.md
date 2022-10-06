@@ -23,7 +23,8 @@ open the ```weatherWidget.html``` file with any text editor:<br>
  ```displayWidth``` weather display width<br>
  ```weatherBackground``` weather box color (if ```dynamicBackground``` is enabled, this will only apply during the day hours)<br>
  ```dynamicBackground``` weather box will change based on day/night. ```1```=on ```0```=off<br>
- 
+ ```clockSeperator``` optional: seperator for the temp and time in full mode only (ex: ```-```, ```/```, ```.```, ```*```, additional spaces, etc.)<br>
+ <br>
 ```
 weatherWidget.html
 
