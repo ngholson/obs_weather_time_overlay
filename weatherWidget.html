@@ -57,7 +57,7 @@ function weatherCheck() {
 	var wimg="./images/"+apiResponse.weather[0].icon +".png";
 	$.ajax({
 	url:'http://api.openweathermap.org/geo/1.0/direct',
-	data:{ q: `${apiResponse.name}`, appid: `${yourApiKey}` },
+	data:{ q: `${yourCity}`, appid: `${yourApiKey}` },
 	dataType: 'json',
 	success: function(geoResponse) {
 	if (geoResponse[0].state == apiResponse.name || geoResponse[0].state == null ) { 
