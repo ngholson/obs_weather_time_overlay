@@ -35,7 +35,7 @@ var yourCity = "CHANGE_ME";		// your city name, ex: "London, UK" or "Las Vegas, 
 var yourUnits = "imperial";		// 'imperial' for fahrenheit  'metric' for celsius  'standard' for kelvin.
 var weatherDisplay = "full";		// options: "full" , "weather", "simple" , "temp" , "time" (default = "full")
 var weatherIcons = 1;			// show Weather status icons in display 1=on  0=off
-var iconHeight = "22px";		// weather icon height in px
+var iconHeight = "22px";		// weather icon height in px (i find that textSize+2 works best, ex: fontSize=20pt + 2 = iconHeight=22px)
 var textSize = "20pt";			// font size
 var textColor = "black";		// font color
 var displayWidth = "850px";		// weather display box width
