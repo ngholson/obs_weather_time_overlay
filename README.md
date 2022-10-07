@@ -14,7 +14,7 @@ open the ```weatherWidget.html``` file with any text editor:<br>
  <b><i>Required:</b></i><br>
  ```yourApiKey``` Your OpenWeatherMap API key.<br>
  ```yourCity``` Your city name. <i>(example:</i>```London, UK``` <i>or</i> ```Las Vegas, NV, US``` <i>or</i> ```Kiev```<i>)</i><br>
- ```yourUnits``` fahrenheit, celsius, kelvin see notes below. (```imperial```, ```metric```, ```standard```)<br>
+ ```yourUnits``` fahrenheit, celsius, kelvin. (```imperial```, ```metric```, ```standard```)<br>
  
  <b><i>Optional:</b></i><br>
  ```weatherDisplay``` options: ```full```, ```weather```, ```simple```, ```temp```, ```time``` (```temp``` and ```time``` only display temp or time)<br>
