@@ -44,7 +44,7 @@ var dynamicBackground = 1;              // weather background changes based on d
 var clockseperator = "";	        // optional: seperator for the temp and time in full mode only (ex: -, /, ., *, additional spaces, etc.)
 
 ```
-
+<br><br>
 Save the file and open OBS-Studio
 
 in OBS, add a new "browser" source to the scene you want to dispaly the weather and time. 
