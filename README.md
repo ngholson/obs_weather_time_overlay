@@ -26,6 +26,7 @@ open the ```weatherWidget.html``` file with any text editor:<br>
  ```weatherBackground``` weather box color (if ```dynamicBackground``` is enabled, this will only apply during the day hours)<br>
  ```dynamicBackground``` weather box will change based on day/night. ```1```=on ```0```=off<br>
  ```clockSeperator``` optional: seperator for the temp and time in full mode only (ex: ```-```, ```/```, ```.```, ```*```, additional spaces, etc.)<br>
+ ```iconPack``` set which icons to use. (1-3) add your own, just follow the naming convention for folders (pack(x)) and files (01d.png 01n.png etc). 
  <br>
 ```
 weatherWidget.html
