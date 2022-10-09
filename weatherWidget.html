@@ -2,17 +2,20 @@
 <!--
 weatherWidget with time overlay for OBS
 Author: Norman Gholson IV 2022
-requires free OpenWeatherMap account with private API Key
+requires free private API Key from OpenWeatherMap.org
 https://openweathermap.org/
 -->
 <html><head><script>
 // ------------------------------------------------CHANGE THESE SETTINGS ----------------------------------------------- */
-
+// REQUIRED
 var yourApiKey = "CHANGE_ME";				// your OpenWeatherMap Api key here
 var yourCity = "CHANGE_ME";					// your city name, ex: "London, UK" or "Las Vegas, NV, US" 
 var yourUnits = "imperial";					// 'imperial' for fahrenheit  'metric' for celsius  'standard' for kelvin.
+
+// OPTIONAL
 var weatherDisplay = "full";				// options: "full" , "weather", "simple" , "temp" , "time" (if blank or error, default is "full")
 var weatherIcons = 1;						// show Weather status icons in display 1=on  0=off
+var iconPack = 3;							// Icon Pack ID. (1-3) (add your own just follow the folder (pack1, pack2, pack3...) and file (01d.png, 01n.png) naming convention.  
 var iconHeight = "22px";					// weather icon height (i find it is most are best at textSize+2)
 var textSize = "20pt";						// font size
 var textColor = "black";					// font color
@@ -20,11 +23,9 @@ var displayWidth = "850px";					// weather display box width
 var weatherBackground = "lightgrey";		// weather Background color  (if dynamicBackground is enabled it only applies during daytime hours)
 var dynamicBackground = 1;					// weather background changes based on day or night 1=on 0=off
 var clockSeperator = "";					// optional: seperator for the temp and time in full mode only (ex: -, /, ., *, @, additional spaces, etc.)
-var iconPack = 3;							// Icon Pack ID. (1-3) (add your own just follow the folder (pack1, pack2, pack3...) and file (01d.png, 01n.png) naming convention.  
 
 // ---------------------------------------------  NO CHANGES BELOW HERE  ----------------------------------------------- */
-
-</script><style> :root{ --txtSize:;--txtColor:;--dispWidth:;--wBack:; }
+</script><style>:root{ --txtSize:;--txtColor:;--dispWidth:;--wBack:; }
 .weather-box {border: 1px solid #000;	border-radius:5px; text-align:center; font-family:tahoma; font-weight:bold;
 color:var(--txtColor);	width:var(--dispWidth);	background:var(--wBack); font-size:var(--txtSize);}
 body { background: rgba(0,0,0,0); }
@@ -44,7 +45,7 @@ function weatherCheck() {
 	success: function(apiResponse) {
 	if (dynamicBackground == 1){
 	if(apiResponse.weather[0].icon.slice(2) == "n") { document.querySelector(':root').style.setProperty('--wBack', "linear-gradient(to bottom, black , dimgrey");document.querySelector(':root').style.setProperty('--txtColor', "white");}
-	if(apiResponse.weather[0].icon.slice(2) == "d") { document.querySelector(':root').style.setProperty('--wBack', "linear-gradient(to bottom, skyblue ,"+weatherBackground);document.querySelector(':root').style.setProperty('--txtColor', "black");}
+	else { document.querySelector(':root').style.setProperty('--wBack', "linear-gradient(to bottom, skyblue ,"+weatherBackground);document.querySelector(':root').style.setProperty('--txtColor', "black");}
 	}
 	var curtemp = Math.round(apiResponse.main.temp);
 	var wimg="./images/pack"+`${iconPack}`+"/"+apiResponse.weather[0].icon +".png";
@@ -53,9 +54,10 @@ function weatherCheck() {
 	data:{ q: `${yourCity}`, appid: `${yourApiKey}` },
 	dataType: 'json',
 	success: function(geoResponse) {
+	if (apiResponse.name.toLowerCase() != "new york") {
 	if (geoResponse[0].state == apiResponse.name || geoResponse[0].state == null ) { 
 		geoResponse[0].state = regionTranslate.of(geoResponse[0].country);
-		}
+		}}
 	if (weatherDisplay.toLowerCase() == "temp") {
 	if (weatherIcons == 1){document.getElementById("id-weather").innerHTML = `<img style='height: ${iconHeight};' src=${wimg}> ${curtemp}&deg;`;return; }
 	document.getElementById("id-weather").innerHTML = `${curtemp}&deg;`;return;} 
