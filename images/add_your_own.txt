@@ -1,0 +1,6 @@
+Add your own weather icons.
+
+make sure you follow the existing naming convention:
+
+folders: the name should always start with the word "pack" followed by a number, just not one already used. for instance folder name "pack5" 
+images: 01d.png 02d.png etc. the d and n designate day and night. follow existing images for names. 
