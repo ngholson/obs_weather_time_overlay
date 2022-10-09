@@ -43,7 +43,7 @@ var displayWidth = "850px";		// weather display box width
 var weatherBackground = "lightgrey";    // weather Background color  (if dynamicBackground is enabled this only applies during daytime hours)
 var dynamicBackground = 1;              // weather background changes based on day or night 1=on 0=off
 var clockseperator = "";	        // optional: seperator for the temp and time in full mode only (ex: -, /, ., *, additional spaces, etc.)
-var iconPack = 3;                     // Icon Pack ID. (1-3) (add your own just follow the folder (pack1, pack2, pack3...) and file (01d.png, 01n.png) naming convention.  
+var iconPack = 3;                       // Icon Pack ID. (1-3) (add your own just follow the folder (pack1, pack2, pack3...) and file (01d.png, 01n.png) naming convention.  
 
 ```
 <br><br>
