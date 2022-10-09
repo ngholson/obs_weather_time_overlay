@@ -54,7 +54,7 @@ function weatherCheck() {
 	data:{ q: `${yourCity}`, appid: `${yourApiKey}` },
 	dataType: 'json',
 	success: function(geoResponse) {
-	if (apiResponse.name.toLowerCase() != "new york") {
+	if (geoResponse[0].country.toLowerCase() != "us") {
 	if (geoResponse[0].state == apiResponse.name || geoResponse[0].state == null ) { 
 		geoResponse[0].state = regionTranslate.of(geoResponse[0].country);
 		}}
