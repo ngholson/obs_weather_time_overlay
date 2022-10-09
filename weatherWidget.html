@@ -2,7 +2,7 @@
 <!--
 weatherWidget with time overlay for OBS
 Author: Norman Gholson IV 2022
-requires free API key from OpenWeatherMap.org
+requires free OpenWeatherMap account with private API Key
 https://openweathermap.org/
 -->
 <html><head><script>
@@ -13,30 +13,31 @@ var yourCity = "CHANGE_ME";					// your city name, ex: "London, UK" or "Las Vega
 var yourUnits = "imperial";					// 'imperial' for fahrenheit  'metric' for celsius  'standard' for kelvin.
 var weatherDisplay = "full";				// options: "full" , "weather", "simple" , "temp" , "time" (if blank or error, default is "full")
 var weatherIcons = 1;						// show Weather status icons in display 1=on  0=off
-var iconHeight = "22px";					// weather icon height (i find it is best at textSize+2)
+var iconHeight = "22px";					// weather icon height (i find it is most are best at textSize+2)
 var textSize = "20pt";						// font size
 var textColor = "black";					// font color
 var displayWidth = "850px";					// weather display box width
 var weatherBackground = "lightgrey";		// weather Background color  (if dynamicBackground is enabled it only applies during daytime hours)
 var dynamicBackground = 1;					// weather background changes based on day or night 1=on 0=off
-var clockSeperator = "";					// optional: seperator for the temp and time in full mode only (ex: -, /, ., *, additional spaces, etc.)
+var clockSeperator = "";					// optional: seperator for the temp and time in full mode only (ex: -, /, ., *, @, additional spaces, etc.)
+var iconPack = "3";							// Icon Pack ID. (1-3) (add your own just follow the folder (pack1, pack2, pack3...) and file (01d.png, 01n.png) naming convention.  
 
 </script><style> 
 
 .weather-box {
-	border: 1px solid #000;
+	border: 1px solid #000;																
 	border-radius:5px;
 	text-align:center;
 	font-family:tahoma;
 	font-weight:bold;
-
-/* ---------------------------------------------  NO CHANGES BELOW HERE  ----------------------------------------------- */
 	
-color:var(--txtColor); width:var(--dispWidth); background:var(--wBack); font-size:var(--txtSize); }
+/* ---------------------------------------------  NO CHANGES BELOW HERE  ----------------------------------------------- */
+
+color:var(--txtColor);	width:var(--dispWidth);	background:var(--wBack); font-size:var(--txtSize);	}
 :root{ --txtSize:;--txtColor:;--dispWidth:;--wBack:; }
 body { background: rgba(0,0,0,0); }
 </style></head><body>
-<script src="jquery.js"></script><center><pre class="weather-box" id="id-weather"></pre></center><script>
+<script src="jquery.js"></script><center><pre class="weather-box" id="id-weather"></pre><br></center><script>
 var language = window.navigator.userLanguage || window.navigator.language;
 const regionTranslate = new Intl.DisplayNames([language], { type: 'region' });
 document.querySelector(':root').style.setProperty('--txtSize', textSize);document.querySelector(':root').style.setProperty('--txtColor', textColor);
@@ -54,7 +55,7 @@ function weatherCheck() {
 	if(apiResponse.weather[0].icon.slice(2) == "d") { document.querySelector(':root').style.setProperty('--wBack', "linear-gradient(to bottom, skyblue ,"+weatherBackground);document.querySelector(':root').style.setProperty('--txtColor', "black");}
 	}
 	var curtemp = Math.round(apiResponse.main.temp);
-	var wimg="./images/"+apiResponse.weather[0].icon +".png";
+	var wimg="./images/pack"+`${iconPack}`+"/"+apiResponse.weather[0].icon +".png";
 	$.ajax({
 	url:'http://api.openweathermap.org/geo/1.0/direct',
 	data:{ q: `${yourCity}`, appid: `${yourApiKey}` },
