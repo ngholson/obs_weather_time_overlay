@@ -20,19 +20,13 @@ var displayWidth = "850px";					// weather display box width
 var weatherBackground = "lightgrey";		// weather Background color  (if dynamicBackground is enabled it only applies during daytime hours)
 var dynamicBackground = 1;					// weather background changes based on day or night 1=on 0=off
 var clockSeperator = "";					// optional: seperator for the temp and time in full mode only (ex: -, /, ., *, @, additional spaces, etc.)
-var iconPack = "3";							// Icon Pack ID. (1-3) (add your own just follow the folder (pack1, pack2, pack3...) and file (01d.png, 01n.png) naming convention.  
+var iconPack = 3;							// Icon Pack ID. (1-3) (add your own just follow the folder (pack1, pack2, pack3...) and file (01d.png, 01n.png) naming convention.  
 
-</script><style> 
+// ---------------------------------------------  NO CHANGES BELOW HERE  ----------------------------------------------- */
 
+</script><style>
 .weather-box {
-	border: 1px solid #000;																
-	border-radius:5px;
-	text-align:center;
-	font-family:tahoma;
-	font-weight:bold;
-	
-/* ---------------------------------------------  NO CHANGES BELOW HERE  ----------------------------------------------- */
-
+border: 1px solid #000;	border-radius:5px; text-align:center; font-family:tahoma; font-weight:bold;
 color:var(--txtColor);	width:var(--dispWidth);	background:var(--wBack); font-size:var(--txtSize);	}
 :root{ --txtSize:;--txtColor:;--dispWidth:;--wBack:; }
 body { background: rgba(0,0,0,0); }
