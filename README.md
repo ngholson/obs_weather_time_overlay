@@ -19,7 +19,7 @@ open the ```weatherWidget.html``` file with any text editor:<br>
  <b><i>Optional:</b></i><br>
  ```weatherDisplay``` options: ```full```, ```weather```, ```simple```, ```temp```, ```time``` (```temp``` and ```time``` only display temp or time)<br>
  ```weatherIcons``` turns on weather display icons: ```1```=on ```0```=off<br>
- ```iconHeight``` weather Icon height<br>
+ ```iconHeight``` weather Icon height (best practice appears to be textSize + 2)<br>
  ```textSize``` text size<br>
  ```textColor``` text color<br>
  ```displayWidth``` weather display width<br>
