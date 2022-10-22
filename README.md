@@ -1,4 +1,5 @@
 # Live weather and time overlay for OBS
+
 screenshot:<br>
 <center>
 <img src="https://obsproject.com/forum/attachments/screen_shot-png.87338/"></center>
@@ -6,6 +7,8 @@ screenshot:<br>
 ### <a href="https://github.com/ngholson/obs_weather_time_overlay/archive/refs/heads/main.zip">Download here</a> 
 
 **This requires a <a href="https://home.openweathermap.org/users/sign_up">free API key</a> from OpenWeatherMap.org**
+
+Multi-Language Support. Pulls default language information from browser and displays output in that language.
 
 <B>NOTE: IT WILL TAKE 5-10 MINUTES FOR YOUR NEW API KEY TO BECOME ACTIVE. PLEASE BE PATIENT.</b>
 
