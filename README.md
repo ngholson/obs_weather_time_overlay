@@ -8,7 +8,7 @@ screenshot:<br>
 
 **This requires a <a href="https://home.openweathermap.org/users/sign_up">free API key</a> from OpenWeatherMap.org**
 
-Multi-Language Support. Pulls default language information from browser and displays output in that language.
+Multi-Language Support. Pulls default language information from browser (in this case OBS) and displays output in that language.
 
 <B>NOTE: IT WILL TAKE 5-10 MINUTES FOR YOUR NEW API KEY TO BECOME ACTIVE. PLEASE BE PATIENT.</b>
 
