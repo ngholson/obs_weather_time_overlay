@@ -4,7 +4,7 @@ screenshot:<br>
 <center>
 <img src="https://obsproject.com/forum/attachments/screen_shot-png.87338/"></center>
 
-### <a href="https://github.com/ngholson/obs_weather_time_overlay/archive/refs/heads/main.zip">Download here</a> 
+# <a href="https://github.com/ngholson/obs_weather_time_overlay/archive/refs/heads/main.zip">Download here</a> 
 
 **This requires a <a href="https://home.openweathermap.org/users/sign_up">free API key</a> from OpenWeatherMap.org**
 
