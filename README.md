@@ -34,20 +34,22 @@ open the ```weatherWidget.html``` file with any text editor:<br>
 ```
 weatherWidget.html
 
-var yourApiKey = "CHANGE_ME";		// your OpenWeatherMap Api key here
-var yourCity = "CHANGE_ME";		// your city name, ex: "London, UK" or "Las Vegas, NV, US" 
-var yourUnits = "imperial";		// 'imperial' for fahrenheit  'metric' for celsius  'standard' for kelvin.
-var weatherDisplay = "full";		// options: "full" , "weather", "simple" , "temp" , "time" (default = "full")
-var weatherIcons = 1;			// show Weather status icons in display 1=on  0=off
-var iconHeight = "22px";		// weather icon height in px (i find that textSize+2 works best, ex: fontSize=20pt + 2 = iconHeight=22px)
-var textSize = "20pt";			// font size
-var textColor = "black";		// font color
-var displayWidth = "850px";		// weather display box width
-var weatherBackground = "lightgrey";    // weather Background color  (if dynamicBackground is enabled this only applies during daytime hours)
-var dynamicBackground = 1;              // weather background changes based on day or night 1=on 0=off
-var clockseperator = "";	        // optional: seperator for the temp and time in full mode only (ex: -, /, ., *, additional spaces, etc.)
-var iconPack = 3;                       // Icon Pack ID. (1-3) (add your own just follow the folder (pack1, pack2, pack3...) and file (01d.png, 01n.png) naming convention.  
+// REQUIRED
+var yourApiKey = "CHANGE_ME";        // your OpenWeatherMap Api key here
+var yourCity = "CHANGE_ME";          // your city name, ex: "London, UK" or "Las Vegas, NV, US" 
+var yourUnits = "imperial";          // 'imperial' for fahrenheit  'metric' for celsius  'standard' for kelvin.
 
+// OPTIONAL
+var weatherDisplay = "full";         // options: "full" , "weather", "simple" , "temp" , "time" (if blank or error, default is "full")
+var weatherIcons = 1;                // show Weather status icons in display 1=on  0=off
+var iconPack = 3;                    // Icon Pack ID. (1-3) (add your own just follow the folder (pack1, pack2, pack3...) and file (01d.png, 01n.png) naming convention.  
+var iconHeight = "22px";             // weather icon height (i find it is best at textSize+2, ex: textSize = 20pt + 2 = 22px)
+var textSize = "20pt";               // font size
+var textColor = "black";             // font color
+var displayWidth = "850px";          // weather display box width
+var weatherBackground = "lightgrey"; // weather Background color  (if dynamicBackground is enabled this only applies during daytime hours)
+var dynamicBackground = 1;           // weather background changes based on day or night 1=on 0=off
+var clockSeperator = "";             // optional: seperator for the temp and time in full mode only (ex: -, /, ., *, @, additional spaces, etc.)
 ```
 <br><br>
 Save the file and open OBS-Studio
