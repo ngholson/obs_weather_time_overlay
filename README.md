@@ -22,6 +22,7 @@ open the ```weatherWidget.html``` file with any text editor:<br>
  <b><i>Optional:</b></i><br>
  ```weatherDisplay``` options: ```full```, ```weather```, ```simple```, ```temp```, ```time``` (```temp``` and ```time``` only display temp or time)<br>
  ```weatherIcons``` turns on weather display icons: ```1```=on ```0```=off<br>
+ ```iconPack``` set which icons to use. (1-3) (add your own, see the text file in the images folder.)<br>
  ```iconHeight``` weather Icon height (best practice appears to be textSize + 2)<br>
  ```textSize``` text size<br>
  ```textColor``` text color<br>
@@ -29,7 +30,6 @@ open the ```weatherWidget.html``` file with any text editor:<br>
  ```weatherBackground``` weather box color (if ```dynamicBackground``` is enabled, this will only apply during the day hours)<br>
  ```dynamicBackground``` weather box will change based on day/night. ```1```=on ```0```=off<br>
  ```clockSeperator``` optional: seperator for the temp and time in full mode only (ex: ```-```, ```/```, ```.```, ```*```, blank spaces, etc.)<br>
- ```iconPack``` set which icons to use. (1-3) (add your own, see the text file in the images folder.)<br>
  <br>
 ```
 weatherWidget.html
