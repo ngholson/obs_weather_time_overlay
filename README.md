@@ -23,7 +23,7 @@ open the ```weatherWidget.html``` file with any text editor:<br>
  ```weatherDisplay``` options: ```full```, ```weather```, ```simple```, ```temp```, ```time``` (```temp``` and ```time``` only display temp or time)<br>
  ```weatherIcons``` turns on weather display icons: ```1```=on ```0```=off<br>
  ```iconPack``` set which icons to use. (1-3) (add your own, see the text file in the images folder.)<br>
- ```iconHeight``` weather Icon height (best practice appears to be textSize + 2)<br>
+ ```iconHeight``` weather Icon height (for best results use textSize + 2. ex: textSize = 20pt + 2 = 22px)<br>
  ```textSize``` text size<br>
  ```textColor``` text color<br>
  ```displayWidth``` weather display width<br>
@@ -43,7 +43,7 @@ var yourUnits = "imperial";          // 'imperial' for fahrenheit  'metric' for 
 var weatherDisplay = "full";         // options: "full" , "weather", "simple" , "temp" , "time" (if blank or error, default is "full")
 var weatherIcons = 1;                // show Weather status icons in display 1=on  0=off
 var iconPack = 3;                    // Icon Pack ID. (1-3) (add your own just follow the folder (pack1, pack2, pack3...) and file (01d.png, 01n.png) naming convention.  
-var iconHeight = "22px";             // weather icon height (i find it is best at textSize+2, ex: textSize = 20pt + 2 = 22px)
+var iconHeight = "22px";             // weather icon height (for best results use textSize + 2. ex: textSize = 20pt + 2 = 22px)
 var textSize = "20pt";               // font size
 var textColor = "black";             // font color
 var displayWidth = "850px";          // weather display box width
