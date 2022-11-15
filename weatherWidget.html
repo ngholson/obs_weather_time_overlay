@@ -22,7 +22,6 @@ https://openweathermap.org/
 		var iconHeight = "22px";					// weather icon height (for best results use textSize + 2. ex: textSize = 20pt + 2 = 22px)
 		var textSize = "20pt";						// font size
 		var textColor = "black";					// font color
-		var displayWidth = "850px";					// weather display box width
 		var weatherBackground = "lightgrey";		// weather Background color  (if dynamicBackground is enabled this only applies during daytime hours)
 		var dynamicBackground = 1;					// weather background changes based on day or night 1=on 0=off
 		var clockSeperator = "";					// optional: seperator for the temp and time in full mode only (ex: -, /, ., *, @, additional spaces, etc.)
@@ -33,7 +32,6 @@ https://openweathermap.org/
 		:root {
 			--txtSize: ;
 			--txtColor: ;
-			--dispWidth: ;
 			--wBack: ;
 		}
 
@@ -44,9 +42,10 @@ https://openweathermap.org/
 			font-family: tahoma;
 			font-weight: bold;
 			color: var(--txtColor);
-			width: var(--dispWidth);
 			background: var(--wBack);
 			font-size: var(--txtSize);
+			padding-left:20px;
+			padding-right:20px;
 		}
 
 		body {
@@ -58,13 +57,13 @@ https://openweathermap.org/
 <body>
 	<script src="jquery.js"></script>
 	<center>
-		<pre class="weather-box" id="id-weather"></pre><br>
+		<span class="weather-box" id="id-weather"></span><br>
 	</center>
 	<script>
 		var language = window.navigator.userLanguage || window.navigator.language;
 		const regionTranslate = new Intl.DisplayNames([language], { type: 'region' });
 		document.querySelector(':root').style.setProperty('--txtSize', textSize); document.querySelector(':root').style.setProperty('--txtColor', textColor);
-		document.querySelector(':root').style.setProperty('--dispWidth', displayWidth); document.querySelector(':root').style.setProperty('--wBack', weatherBackground);
+		document.querySelector(':root').style.setProperty('--wBack', weatherBackground);
 		refreshData();
 		function weatherCheck() {
 			var time = currentTime(new Date());
