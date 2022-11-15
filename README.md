@@ -26,7 +26,6 @@ open the ```weatherWidget.html``` file with any text editor:<br>
  ```iconHeight``` weather Icon height (for best results use textSize + 2. ex: textSize = 20pt + 2 = 22px)<br>
  ```textSize``` text size<br>
  ```textColor``` text color<br>
- ```displayWidth``` weather display width<br>
  ```weatherBackground``` weather box color (if ```dynamicBackground``` is enabled, this will only apply during the day hours)<br>
  ```dynamicBackground``` weather box will change based on day/night. ```1```=on ```0```=off<br>
  ```clockSeperator``` optional: seperator for the temp and time in full mode only (ex: ```-```, ```/```, ```.```, ```*```, blank spaces, etc.)<br>
@@ -46,7 +45,6 @@ var iconPack = 3;                    // Icon Pack ID. (1-3) (add your own just f
 var iconHeight = "22px";             // weather icon height (for best results use textSize + 2. ex: textSize = 20pt + 2 = 22px)
 var textSize = "20pt";               // font size
 var textColor = "black";             // font color
-var displayWidth = "850px";          // weather display box width
 var weatherBackground = "lightgrey"; // weather Background color  (if dynamicBackground is enabled this only applies during daytime hours)
 var dynamicBackground = 1;           // weather background changes based on day or night 1=on 0=off
 var clockSeperator = "";             // optional: seperator for the temp and time in full mode only (ex: -, /, ., *, @, additional spaces, etc.)
