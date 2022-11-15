@@ -1,5 +1,7 @@
 # Live weather and time overlay for OBS
 
+<i>update: 2022NOV14 updated weather container width to auto adjust to contents.</i>
+
 screenshot:<br>
 <center>
 <img src="https://obsproject.com/forum/attachments/screen_shot-png.87338/"></center>
