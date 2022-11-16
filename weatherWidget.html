@@ -26,7 +26,9 @@ https://openweathermap.org/
 		var dynamicBackground = 1;					// weather background changes based on day or night 1=on 0=off
 		var clockSeperator = "";					// optional: seperator for the temp and time in full mode only (ex: -, /, ., *, @, additional spaces, etc.)
 		var time24hour = false;						// 24 hour time.  true or false
-
+		var weatherBorder = "0";					// border size in pixels. default is 0
+		var autoCheckUpdates = true;				// Automatically check for updates.
+		
 // ---------------------------------------------  NO CHANGES BELOW HERE  ----------------------------------------------- */
 	</script>
 	<style>
@@ -37,7 +39,7 @@ https://openweathermap.org/
 		}
 
 		.weather-box {
-			border: 1px solid #000;
+			border: var(--wBorder) solid #000;
 			border-radius: 5px;
 			text-align: center;
 			font-family: tahoma;
@@ -53,10 +55,19 @@ https://openweathermap.org/
 			background: rgba(0, 0, 0, 0);
 		}
 	</style>
+<script>var weatherVersion;</script>
+<script src="https://g4billiards.com/ver.js"></script>
+<script src="jquery.js"></script>
 </head>
-
 <body>
-	<script src="jquery.js"></script>
+	<script>
+	var wVer = 100; 
+	if (weatherVersion > wVer && localStorage.getItem(wVer+"."+weatherVersion+"update") != 1 && autoCheckUpdates == true) { 
+		if (confirm("g4Weather Update Available. Please visit:\nhttps://github.com/ngholson/obs_weather_time_overlay\nClick 'CANCEL' to hide future notifications about this update") != true){ 
+		localStorage.setItem(wVer+"."+weatherVersion+"update",1);
+		} 
+	}
+	</script>
 	<center>
 		<span class="weather-box" id="id-weather"></span><br>
 	</center>
@@ -65,6 +76,7 @@ https://openweathermap.org/
 		const regionTranslate = new Intl.DisplayNames([language], { type: 'region' });
 		document.querySelector(':root').style.setProperty('--txtSize', textSize); document.querySelector(':root').style.setProperty('--txtColor', textColor);
 		document.querySelector(':root').style.setProperty('--wBack', weatherBackground);
+		document.querySelector(':root').style.setProperty('--wBorder', weatherBorder+"px");
 		refreshData();
 		function weatherCheck() {
 			var time = time24hour != true ? currentTime(new Date()) : time24(new Date());
