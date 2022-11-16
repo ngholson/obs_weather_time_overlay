@@ -25,6 +25,7 @@ https://openweathermap.org/
 		var weatherBackground = "lightgrey";		// weather Background color  (if dynamicBackground is enabled this only applies during daytime hours)
 		var dynamicBackground = 1;					// weather background changes based on day or night 1=on 0=off
 		var clockSeperator = "";					// optional: seperator for the temp and time in full mode only (ex: -, /, ., *, @, additional spaces, etc.)
+		var time24hour = false;						// 24 hour time. 
 
 // ---------------------------------------------  NO CHANGES BELOW HERE  ----------------------------------------------- */
 	</script>
@@ -66,7 +67,11 @@ https://openweathermap.org/
 		document.querySelector(':root').style.setProperty('--wBack', weatherBackground);
 		refreshData();
 		function weatherCheck() {
+			if (time24hour == false){
 			var time = currentTime(new Date());
+			} else {
+			var time = time24(new Date());
+			}
 			$.ajax({
 				url: 'https://api.openweathermap.org/data/2.5/weather',
 				data: { units: `${yourUnits}`, q: `${yourCity}`, appid: `${yourApiKey}`, lang: `${language}` },
@@ -120,6 +125,13 @@ https://openweathermap.org/
 			hours = hours ? hours : 12;
 			minutes = minutes < 10 ? '0' + minutes : minutes;
 			var curTime = hours + ':' + minutes + ' ' + isAmPm;
+			return curTime;
+		}
+		function time24(date) {
+			var hours = date.getHours();
+			var minutes = date.getMinutes();
+			minutes = minutes < 10 ? '0' + minutes : minutes;
+			var curTime = hours + ':' + minutes;
 			return curTime;
 		}
 		function refreshData() {
