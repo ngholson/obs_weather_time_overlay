@@ -131,8 +131,8 @@ https://openweathermap.org/
 			var hours = date.getHours();
 			var minutes = date.getMinutes();
 			minutes = minutes < 10 ? '0' + minutes : minutes;
-			var curTime = hours + ':' + minutes;
-			return curTime;
+			var curTime24 = hours + ':' + minutes;
+			return curTime24;
 		}
 		function refreshData() {
 			weatherCheck();
