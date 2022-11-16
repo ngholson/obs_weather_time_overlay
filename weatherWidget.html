@@ -64,7 +64,7 @@ https://openweathermap.org/
 </head>
 <body>
 	<script>
-	var wVer = 100; 
+	var wVer = 101; 
 	if (weatherVersion > wVer && localStorage.getItem(wVer+"."+weatherVersion+"update") != 1 && autoCheckUpdates == true) { 
 		if (confirm("g4Weather Update Available. Please visit:\nhttps://github.com/ngholson/obs_weather_time_overlay\nClick 'CANCEL' to hide future notifications about this update") != true){ 
 		localStorage.setItem(wVer+"."+weatherVersion+"update",1);
