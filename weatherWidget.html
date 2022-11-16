@@ -67,11 +67,7 @@ https://openweathermap.org/
 		document.querySelector(':root').style.setProperty('--wBack', weatherBackground);
 		refreshData();
 		function weatherCheck() {
-			if (time24hour == false){
-			var time = currentTime(new Date());
-			} else {
-			var time = time24(new Date());
-			}
+			var time = time24hour != true ? currentTime(new Date()) : time24(new Date());
 			$.ajax({
 				url: 'https://api.openweathermap.org/data/2.5/weather',
 				data: { units: `${yourUnits}`, q: `${yourCity}`, appid: `${yourApiKey}`, lang: `${language}` },
