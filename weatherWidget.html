@@ -58,7 +58,7 @@ https://openweathermap.org/
 			background: rgba(0, 0, 0, 0);
 		}
 	</style>
-<script>var weatherVersion;</script>
+<script>var weatherVersion; var weatherFriendly;</script>
 <script src="https://g4billiards.com/ver.js"></script>
 <script src="jquery.js"></script>
 </head>
@@ -66,7 +66,7 @@ https://openweathermap.org/
 	<script>
 	var wVer = 101; 
 	if (weatherVersion > wVer && localStorage.getItem(wVer+"."+weatherVersion+"update") != 1 && autoCheckUpdates == true) { 
-		if (confirm("g4Weather Update Available. Please visit:\nhttps://github.com/ngholson/obs_weather_time_overlay\nClick 'CANCEL' to hide future notifications about this update") != true){ 
+		if (confirm("g4Weather v"+weatherFriendly+" Update Available. Please visit:\nhttps://github.com/ngholson/obs_weather_time_overlay\nClick 'CANCEL' to hide future notifications about this update") != true){ 
 		localStorage.setItem(wVer+"."+weatherVersion+"update",1);
 		} 
 	}
