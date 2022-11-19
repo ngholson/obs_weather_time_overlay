@@ -38,7 +38,7 @@ weatherWidget.html
 
 // REQUIRED
 var yourApiKey = "CHANGE_ME";        // your OpenWeatherMap Api key here
-var yourCity = "CHANGE_ME";          // your city name, ex: "London, UK" or "Las Vegas, NV, US" or "Reno"
+var yourCity = "CHANGE_ME";          // your city name, ex: "London, UK" or "Las Vegas, NV, US" or "Kiev"
 var yourUnits = "imperial";          // 'imperial' for fahrenheit  'metric' for celsius  'standard' for kelvin.
 
 // OPTIONAL
