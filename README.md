@@ -29,6 +29,9 @@ open the ```weatherWidget.html``` file with any text editor:<br>
  ```weatherBackground``` weather box color (if ```dynamicBackground``` is enabled, this will only apply during the day hours)<br>
  ```dynamicBackground``` weather box will change based on day/night. ```1```=on ```0```=off<br>
  ```clockSeperator``` optional: seperator for the temp and time in full mode only (ex: ```-```, ```/```, ```.```, ```*```, blank spaces, etc.)<br>
+ ```time24hour``` if enabled time is displayed in 24hr format vs 12hr format<br>
+	```weatherBorder``` border size around weather display<br>
+	```autoCheckUpdates``` if enabled overlay will check for updates when first loads.<br>
  <br>
 ```
 weatherWidget.html
@@ -48,6 +51,9 @@ var textColor = "black";             // font color
 var weatherBackground = "lightgrey"; // weather Background color  (if dynamicBackground is enabled this only applies during daytime hours)
 var dynamicBackground = 1;           // weather background changes based on day or night 1=on 0=off
 var clockSeperator = "";             // optional: seperator for the temp and time in full mode only (ex: -, /, ., *, @, additional spaces, etc.)
+var time24hour = false;              // 24 hour time.  true or false
+var weatherBorder = "0";             // border size in pixels. default is 0
+var autoCheckUpdates = true;         // Automatically check for updates.
 ```
 <br><br>
 Save the file and open OBS-Studio
