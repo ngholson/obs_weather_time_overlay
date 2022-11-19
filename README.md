@@ -64,6 +64,9 @@ change the height and width to 1920x1080.
 
 save and position as needed.
 
+<b>KNOWN ISSUE:</b><br>
+If your town shares a name with another town, for instance Long Beach, CA and Long Beach, MS. The larger area can use just the short format variable "long beach", in fact in some cases <i>must</i> use the short format, but the smaller city/town would need to use the long format "long beach, ms, usa". <br><br>
+
 REMEMBER: IT WILL TAKE 5-10 MINUTES FOR YOUR API KEY TO BECOME ACTIVE. THIS WILL NOT WORK UNTIL IT DOES.
 <center>
 <img src="https://obsproject.com/forum/attachments/screen_shot-png.87338/">
