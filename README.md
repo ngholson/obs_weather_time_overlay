@@ -12,8 +12,7 @@ Multi-Language Support. Reads default language information from browser (in this
 
 <B>NOTE: IT WILL TAKE 5-10 MINUTES FOR YOUR NEW API KEY TO BECOME ACTIVE. PLEASE BE PATIENT.</b>
 
-open the ```weatherWidget.html``` file with any text editor:<br>
- change the following variables:<br><br>
+After you have downloaded and extracted the .zip file, open the ```weatherWidget.html``` file with any text editor<br> and change the following variables:<br><br>
  <b><i>Required:</b></i><br>
  ```yourApiKey``` Your OpenWeatherMap API key.<br>
  ```yourCity``` Your city name. <i>(example:</i>```London, UK``` <i>or</i> ```Las Vegas, NV, US``` <i>or</i> ```Kiev```<i>)</i><br>
