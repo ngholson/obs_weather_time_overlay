@@ -6,7 +6,7 @@ screenshot:<br>
 
 # <a href="https://github.com/ngholson/obs_weather_time_overlay/archive/refs/heads/main.zip">Download here</a> 
 
-**This requires a <a href="https://home.openweathermap.org/users/sign_up">free API key</a> from OpenWeatherMap.org**<br><i>make sure you sign up for the free api key under the "professional collections" section and not the "One Call by Call" subscription plan.</i>
+**This requires a <a href="https://home.openweathermap.org/users/sign_up">free API key</a> from OpenWeatherMap.org**<br><i>make sure you sign up for the free api key under the "<b>professional collections</b>" section and <b>NOT</b> the "One Call by Call" or the API 3.0 subscription plan.</i>
 
 Multi-Language Support. Reads default language information from browser (in this case OBS) and displays output in that language.
 
