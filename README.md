@@ -36,7 +36,7 @@ After you have downloaded and extracted the .zip file, open the ```weatherWidget
 Save the file and open OBS-Studio
 
 in OBS, add a new "browser" source to the scene you want to dispaly the weather and time. 
-change the URL for the source the path to the ```weatherWidget.html``` file you just saved.
+change the URL for the source to the path of the ```weatherWidget.html``` file you just saved.
 change the height and width to 1920x1080.
 
 save and position as needed.
