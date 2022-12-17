@@ -13,7 +13,7 @@ Multi-Language Support. Reads default language information from browser (in this
 <B>NOTE: IT WILL TAKE 5-10 MINUTES FOR YOUR NEW API KEY TO BECOME ACTIVE. PLEASE BE PATIENT.</b>
 
 open the ```weatherWidget.html``` file with any text editor:<br>
- change the following:<br><br>
+ change the following variables:<br><br>
  <b><i>Required:</b></i><br>
  ```yourApiKey``` Your OpenWeatherMap API key.<br>
  ```yourCity``` Your city name. <i>(example:</i>```London, UK``` <i>or</i> ```Las Vegas, NV, US``` <i>or</i> ```Kiev```<i>)</i><br>
@@ -32,30 +32,8 @@ open the ```weatherWidget.html``` file with any text editor:<br>
  ```time24hour``` if enabled time is displayed in 24hr format vs 12hr format<br>
 	```weatherBorder``` border size around weather display<br>
 	```autoCheckUpdates``` if enabled overlay will check for updates when first loads.<br>
- <br>
-```
-weatherWidget.html
 
-// REQUIRED
-var yourApiKey = "CHANGE_ME";        // your OpenWeatherMap Api key here
-var yourCity = "CHANGE_ME";          // your city name, ex: "London, UK" or "Las Vegas, NV, US" or "Kiev"
-var yourUnits = "imperial";          // 'imperial' for fahrenheit  'metric' for celsius  'standard' for kelvin.
-
-// OPTIONAL
-var weatherDisplay = "full";         // options: "full" , "weather", "simple" , "temp" , "time" (if blank or error, default is "full")
-var weatherIcons = 1;                // show Weather status icons in display 1=on  0=off
-var iconPack = 3;                    // Icon Pack ID. (1-3) (add your own just follow the folder (pack1, pack2, pack3...) and file (01d.png, 01n.png) naming convention.  
-var iconHeight = "22px";             // weather icon height (for best results use textSize + 2. ex: textSize = 20pt + 2 = 22px)
-var textSize = "20pt";               // font size
-var textColor = "black";             // font color
-var weatherBackground = "lightgrey"; // weather Background color  (if dynamicBackground is enabled this only applies during daytime hours)
-var dynamicBackground = 1;           // weather background changes based on day or night 1=on 0=off
-var clockSeperator = "";             // optional: seperator for the temp and time in full mode only (ex: -, /, ., *, @, additional spaces, etc.)
-var time24hour = false;              // 24 hour time.  true or false
-var weatherBorder = "0";             // border size in pixels. default is 0
-var autoCheckUpdates = true;         // Automatically check for updates.
-```
-<br><br>
+<br>
 Save the file and open OBS-Studio
 
 in OBS, add a new "browser" source to the scene you want to dispaly the weather and time. 
