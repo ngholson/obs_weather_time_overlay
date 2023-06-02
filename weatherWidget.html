@@ -100,9 +100,7 @@ https://openweathermap.org/
 						dataType: 'json',
 						success: function (geoResponse) {
 							if (geoResponse[0].country.toLowerCase() != "us") {
-								if (geoResponse[0].state == apiResponse.name || geoResponse[0].state == null) {
-									geoResponse[0].state = regionTranslate.of(geoResponse[0].country);
-								}
+								geoResponse[0].state = regionTranslate.of(geoResponse[0].country);
 							}
 							if (weatherDisplay.toLowerCase() == "temp") {
 								if (weatherIcons == 1) { document.getElementById("id-weather").innerHTML = `<img style='height: ${iconHeight};' src=${wimg}> ${curtemp}&deg;`; return; }
