@@ -9,10 +9,10 @@ https://openweathermap.org/
 
 <head>
 	<script>
-// ------------------------------------------------CHANGE THESE SETTINGS ----------------------------------------------- */
+		// ------------------------------------------------CHANGE THESE SETTINGS ----------------------------------------------- */
 		// REQUIRED
-		var yourApiKey = "CHANGE_ME";				// your OpenWeatherMap Api key here
-		var yourCity = "CHANGE_ME";					// your city name, ex: "London, UK" or "Las Vegas, NV, US" 
+		var yourApiKey = "CHANGE ME";				// your OpenWeatherMap Api key here
+		var yourCity = "CHANGE ME";					// your city name, ex: "London, UK" or "Las Vegas, NV, US" 
 		var yourUnits = "imperial";					// 'imperial' for fahrenheit  'metric' for celsius  'standard' for kelvin.
 
 		// OPTIONAL
@@ -28,8 +28,8 @@ https://openweathermap.org/
 		var time24hour = false;						// 24 hour time.  true or false
 		var weatherBorder = "0";					// border size in pixels. default is 0
 		var autoCheckUpdates = true;				// Automatically check for updates.
-		
-// ---------------------------------------------  NO CHANGES BELOW HERE  ----------------------------------------------- */
+
+		// ---------------------------------------------  NO CHANGES BELOW HERE  ----------------------------------------------- */
 	</script>
 	<style>
 		:root {
@@ -48,28 +48,29 @@ https://openweathermap.org/
 			color: var(--txtColor);
 			background: var(--wBack);
 			font-size: var(--txtSize);
-			padding-left:20px;
-			padding-right:20px;
+			padding-left: 20px;
+			padding-right: 20px;
 			padding-top: 1px;
-			padding-bottom:2px;
+			padding-bottom: 2px;
 		}
 
 		body {
 			background: rgba(0, 0, 0, 0);
 		}
 	</style>
-<script>var weatherVersion; var weatherFriendly;</script>
-<script src="https://g4billiards.com/ver.js"></script>
-<script src="jquery.js"></script>
+	<script>var weatherVersion; var weatherFriendly;</script>
+	<script src="https://g4billiards.com/ver.js"></script>
+	<script src="jquery.js"></script>
 </head>
+
 <body>
 	<script>
-	var wVer = 101; 
-	if (weatherVersion > wVer && localStorage.getItem(wVer+"."+weatherVersion+"update") != 1 && autoCheckUpdates == true) { 
-		if (confirm("g4Weather v"+weatherFriendly+" Update Available. Please visit:\nhttps://github.com/ngholson/obs_weather_time_overlay\nClick 'CANCEL' to hide future notifications about this update") != true){ 
-		localStorage.setItem(wVer+"."+weatherVersion+"update",1);
-		} 
-	}
+		var wVer = 101;
+		if (weatherVersion > wVer && localStorage.getItem(wVer + "." + weatherVersion + "update") != 1 && autoCheckUpdates == true) {
+			if (confirm("g4Weather v" + weatherFriendly + " Update Available. Please visit:\nhttps://github.com/ngholson/obs_weather_time_overlay\nClick 'CANCEL' to hide future notifications about this update") != true) {
+				localStorage.setItem(wVer + "." + weatherVersion + "update", 1);
+			}
+		}
 	</script>
 	<center>
 		<span class="weather-box" id="id-weather"></span><br>
@@ -79,8 +80,17 @@ https://openweathermap.org/
 		const regionTranslate = new Intl.DisplayNames([language], { type: 'region' });
 		document.querySelector(':root').style.setProperty('--txtSize', textSize); document.querySelector(':root').style.setProperty('--txtColor', textColor);
 		document.querySelector(':root').style.setProperty('--wBack', weatherBackground);
-		document.querySelector(':root').style.setProperty('--wBorder', weatherBorder+"px");
+		document.querySelector(':root').style.setProperty('--wBorder', weatherBorder + "px");
 		refreshData();
+
+		// Function to convert a string to proper case
+		function toProperCase(str) {
+			return str.replace(/\w\S*/g, function (txt) {
+				return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+			});
+		}
+
+
 		function weatherCheck() {
 			var time = time24hour != true ? currentTime(new Date()) : time24(new Date());
 			$.ajax({
@@ -92,6 +102,8 @@ https://openweathermap.org/
 						if (apiResponse.weather[0].icon.slice(2) == "n") { document.querySelector(':root').style.setProperty('--wBack', "linear-gradient(to bottom, black , dimgrey"); document.querySelector(':root').style.setProperty('--txtColor', "white"); }
 						else { document.querySelector(':root').style.setProperty('--wBack', "linear-gradient(to bottom, skyblue ," + weatherBackground); document.querySelector(':root').style.setProperty('--txtColor', "black"); }
 					}
+
+					var weatherDescription = toProperCase(apiResponse.weather[0].description);
 					var curtemp = Math.round(apiResponse.main.temp);
 					var wimg = "./images/pack" + `${iconPack}` + "/" + apiResponse.weather[0].icon + ".png";
 					$.ajax({
@@ -99,6 +111,7 @@ https://openweathermap.org/
 						data: { q: `${yourCity}`, appid: `${yourApiKey}` },
 						dataType: 'json',
 						success: function (geoResponse) {
+
 							if (geoResponse[0].country.toLowerCase() != "us") {
 								if (geoResponse[0].state == apiResponse.name || geoResponse[0].state == null) {
 									geoResponse[0].state = regionTranslate.of(geoResponse[0].country);
@@ -115,14 +128,14 @@ https://openweathermap.org/
 							}
 							if (weatherDisplay.toLowerCase() == "weather") {
 								if (weatherIcons == 1) {
-									document.getElementById("id-weather").innerHTML = `${geoResponse[0].name}, ${geoResponse[0].state}: ${curtemp}&deg; <img style='height: ${iconHeight};' src=${wimg}> ${apiResponse.weather[0].description}`;
-								} else { document.getElementById("id-weather").innerHTML = `${geoResponse[0].name}, ${geoResponse[0].state}: ${curtemp}&deg; \/ ${apiResponse.weather[0].description}`; }
+									document.getElementById("id-weather").innerHTML = `${geoResponse[0].name}, ${geoResponse[0].state}: ${curtemp}&deg; <img style='height: ${iconHeight};' src=${wimg}> ${weatherDescription}`;
+								} else { document.getElementById("id-weather").innerHTML = `${geoResponse[0].name}, ${geoResponse[0].state}: ${curtemp}&deg; \/ ${weatherDescription}`; }
 								return;
 							}
 							//start of full
 							if (weatherIcons == 1) {
-								document.getElementById("id-weather").innerHTML = `${geoResponse[0].name}, ${geoResponse[0].state}: ${curtemp}&deg; <img style='height: ${iconHeight};' src=${wimg}> ${apiResponse.weather[0].description} ${clockSeperator} ${time}`;
-							} else { document.getElementById("id-weather").innerHTML = `${geoResponse[0].name}, ${geoResponse[0].state}: ${curtemp}&deg; \/ ${apiResponse.weather[0].description} ${clockSeperator} ${time}`; }
+								document.getElementById("id-weather").innerHTML = `${geoResponse[0].name}, ${geoResponse[0].state}: ${curtemp}&deg; <img style='height: ${iconHeight};' src=${wimg}> ${weatherDescription} ${clockSeperator} ${time}`;
+							} else { document.getElementById("id-weather").innerHTML = `${geoResponse[0].name}, ${geoResponse[0].state}: ${curtemp}&deg; \/ ${weatherDescription} ${clockSeperator} ${time}`; }
 						}
 					});
 				}
